@@ -47,7 +47,7 @@ for (let i = 1; i < stations.length; i++) {
   segmentDistances.push(d);
   cumulativeDistances.push(cumulativeDistances[i - 1] + d);
 }
-const totalRouteDistance = cumulativeDistances[cumulativeDistances.length - 1];
+
 
 /* ── Car SVG ──────────────────────────────────── */
 const CAR_SVG = `
