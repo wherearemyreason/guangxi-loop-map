@@ -1,0 +1,244 @@
+[
+  {
+    "id": 1,
+    "name": "南宁起点",
+    "folderName": "1南宁起点",
+    "coordinates": [
+      108.387056,
+      22.767789
+    ],
+    "photos": [
+      "/photos/1南宁起点/IMG_5427.jpg",
+      "/photos/1南宁起点/IMG_5434.jpg",
+      "/photos/1南宁起点/IMG_5452.jpg",
+      "/photos/1南宁起点/IMG_5569.jpg",
+      "/photos/1南宁起点/IMG_5574.jpg",
+      "/photos/1南宁起点/IMG_5576.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "白头叶猴保护区",
+    "folderName": "2白头叶猴保护区",
+    "coordinates": [
+      107.886894,
+      22.456447
+    ],
+    "photos": [
+      "/photos/2白头叶猴保护区/FullSizeRender.JPG",
+      "/photos/2白头叶猴保护区/IMG_4279.JPG",
+      "/photos/2白头叶猴保护区/IMG_5578.jpg",
+      "/photos/2白头叶猴保护区/IMG_5583.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "友谊关",
+    "folderName": "3友谊关",
+    "coordinates": [
+      106.775017,
+      22.089547
+    ],
+    "photos": [
+      "/photos/3友谊关/IMG_5605.jpg",
+      "/photos/3友谊关/IMG_5613.jpg",
+      "/photos/3友谊关/IMG_5624.jpg",
+      "/photos/3友谊关/IMG_5636.jpg",
+      "/photos/3友谊关/IMG_5638.jpg",
+      "/photos/3友谊关/IMG_5665.jpg",
+      "/photos/3友谊关/IMG_5673.jpg",
+      "/photos/3友谊关/IMG_5678.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "凭祥浦寨",
+    "folderName": "4凭祥浦寨",
+    "coordinates": [
+      106.686944,
+      22.00155
+    ],
+    "photos": [
+      "/photos/4凭祥浦寨/IMG_2842.JPG",
+      "/photos/4凭祥浦寨/IMG_5690.jpg",
+      "/photos/4凭祥浦寨/IMG_5695.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "崇左市区太平古镇",
+    "folderName": "5崇左市区太平古镇",
+    "coordinates": [
+      107.353394,
+      22.421472
+    ],
+    "photos": [
+      "/photos/5崇左市区太平古镇/IMG_2849.JPG",
+      "/photos/5崇左市区太平古镇/IMG_2852.JPG",
+      "/photos/5崇左市区太平古镇/IMG_2859.JPG"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "伏那秘境",
+    "folderName": "6伏那秘境",
+    "coordinates": [
+      107.1438,
+      22.763697
+    ],
+    "photos": [
+      "/photos/6伏那秘境/IMG_2919.JPG",
+      "/photos/6伏那秘境/IMG_2944.JPG",
+      "/photos/6伏那秘境/IMG_2949.JPG",
+      "/photos/6伏那秘境/IMG_2957.JPG",
+      "/photos/6伏那秘境/IMG_2969.JPG",
+      "/photos/6伏那秘境/IMG_5745.jpg",
+      "/photos/6伏那秘境/IMG_5758.jpg",
+      "/photos/6伏那秘境/IMG_5815.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "德天瀑布",
+    "folderName": "7德天瀑布",
+    "coordinates": [
+      106.867417,
+      22.876144
+    ],
+    "photos": [
+      "/photos/7德天瀑布/IMG_2974.JPG",
+      "/photos/7德天瀑布/IMG_2991.JPG",
+      "/photos/7德天瀑布/IMG_3030.JPG",
+      "/photos/7德天瀑布/IMG_3036.JPG",
+      "/photos/7德天瀑布/IMG_4325.JPG",
+      "/photos/7德天瀑布/IMG_4353.JPG",
+      "/photos/7德天瀑布/IMG_4354.JPG",
+      "/photos/7德天瀑布/IMG_4370.JPG",
+      "/photos/7德天瀑布/IMG_5824.jpg",
+      "/photos/7德天瀑布/IMG_5846.jpg",
+      "/photos/7德天瀑布/IMG_5873.jpg",
+      "/photos/7德天瀑布/IMG_5909.jpg",
+      "/photos/7德天瀑布/IMG_5916.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "三叠岭瀑布",
+    "folderName": "8三叠岭瀑布",
+    "coordinates": [
+      106.670486,
+      22.994583
+    ],
+    "photos": [
+      "/photos/8三叠岭瀑布/IMG_5923.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "靖西",
+    "folderName": "9靖西",
+    "coordinates": [
+      106.413856,
+      23.134047
+    ],
+    "photos": [
+      "/photos/9靖西/IMG_3066.JPG"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "浩坤湖",
+    "folderName": "10浩坤湖",
+    "coordinates": [
+      106.657761,
+      24.198886
+    ],
+    "photos": [
+      "/photos/10浩坤湖/IMG_3076.JPG",
+      "/photos/10浩坤湖/IMG_3096.JPG",
+      "/photos/10浩坤湖/IMG_4407.JPG",
+      "/photos/10浩坤湖/IMG_6090.jpg",
+      "/photos/10浩坤湖/IMG_6105.jpg",
+      "/photos/10浩坤湖/IMG_6107.jpg",
+      "/photos/10浩坤湖/IMG_6125.jpg",
+      "/photos/10浩坤湖/IMG_6129.jpg",
+      "/photos/10浩坤湖/IMG_6138.jpg",
+      "/photos/10浩坤湖/IMG_6164.jpg",
+      "/photos/10浩坤湖/IMG_6181.jpg",
+      "/photos/10浩坤湖/IMG_6221.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "三门海",
+    "folderName": "11三门海",
+    "coordinates": [
+      106.565156,
+      24.347733
+    ],
+    "photos": [
+      "/photos/11三门海/IMG_3164.JPG",
+      "/photos/11三门海/IMG_3168.JPG",
+      "/photos/11三门海/IMG_3170.JPG",
+      "/photos/11三门海/IMG_6248.jpg",
+      "/photos/11三门海/IMG_6261.jpg",
+      "/photos/11三门海/IMG_6282.jpg",
+      "/photos/11三门海/IMG_6313.jpg",
+      "/photos/11三门海/IMG_6488.jpg",
+      "/photos/11三门海/IMG_6493.jpg",
+      "/photos/11三门海/IMG_6870.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "红水河第一湾",
+    "folderName": "12红水河第一湾",
+    "coordinates": [
+      107.514467,
+      24.307322
+    ],
+    "photos": [
+      "/photos/12红水河第一湾/IMG_6519.jpg",
+      "/photos/12红水河第一湾/IMG_6526.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "弄响天坑",
+    "folderName": "13弄响天坑",
+    "coordinates": [
+      108.110503,
+      24.051067
+    ],
+    "photos": [
+      "/photos/13弄响天坑/IMG_6667.jpg",
+      "/photos/13弄响天坑/IMG_6701.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "都安",
+    "folderName": "14都安",
+    "coordinates": [
+      108.038322,
+      24.066325
+    ],
+    "photos": [
+      "/photos/14都安/IMG_6633.jpg",
+      "/photos/14都安/IMG_6723.jpg",
+      "/photos/14都安/IMG_6726.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "南宁终点",
+    "folderName": "15南宁终点",
+    "coordinates": [
+      108.348053,
+      22.826008
+    ],
+    "photos": [
+      "/photos/15南宁终点/IMG_6871.jpg"
+    ]
+  }
+]
