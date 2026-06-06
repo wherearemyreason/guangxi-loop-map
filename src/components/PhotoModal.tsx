@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Station } from '../types';
+import { getAssetUrl } from '../utils/db';
 
 interface Props {
   station: Station;
@@ -10,12 +11,22 @@ interface Props {
 }
 
 export default function PhotoModal({ station, autoPlay = false, autoPlayDuration = 4000, onClose }: Props) {
+  const [resolvedPhotos, setResolvedPhotos] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timerProgress, setTimerProgress] = useState(0);
   const timerRef = useRef<number>(0);
   const startTimeRef = useRef<number>(0);
 
-  const photos = station.photos;
+  useEffect(() => {
+    // Resolve all photo URLs (converts blob://db/... to local Object URLs)
+    const resolveAll = async () => {
+      const urls = await Promise.all(station.photos.map(p => getAssetUrl(p)));
+      setResolvedPhotos(urls);
+    };
+    resolveAll();
+  }, [station.photos]);
+
+  const photos = resolvedPhotos;
   const total = photos.length;
   const displayCount = Math.min(total, 6); // show up to 6 photos
 

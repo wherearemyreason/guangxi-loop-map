@@ -5,3 +5,12 @@ export interface Station {
   coordinates: [number, number];
   photos: string[];
 }
+
+export interface Trip {
+  id: string;
+  title: string;
+  description: string;
+  musicUrl: string;
+  stations: Station[];
+  isCustom?: boolean;
+}
