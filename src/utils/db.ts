@@ -1,5 +1,8 @@
 // IndexedDB utility for storing large assets like photos and audio files
 
+import { createPhotoPreviewUrl } from '../features/media/photoPreview';
+import { isHeifFile } from '../features/media/photoFile';
+
 const DB_NAME = 'TravelDiaryDB';
 const DB_VERSION = 2;
 
@@ -27,7 +30,7 @@ export function initDB(): Promise<IDBDatabase> {
 
 // ── Custom Trips Operations ───────────────────────────────────
 
-export function getCustomTrips(): Promise<any[]> {
+export function getCustomTrips<T = unknown>(): Promise<T[]> {
   return initDB().then((db) => {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('trips', 'readonly');
@@ -40,7 +43,7 @@ export function getCustomTrips(): Promise<any[]> {
   });
 }
 
-export function saveCustomTrip(trip: any): Promise<void> {
+export function saveCustomTrip(trip: unknown): Promise<void> {
   return initDB().then((db) => {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('trips', 'readwrite');
@@ -65,11 +68,13 @@ export function deleteCustomTrip(tripId: string): Promise<void> {
       // We also want to delete all assets starting with the tripId prefix
       // We open a cursor on assets
       const request = assetStore.openKeyCursor();
-      request.onsuccess = (event: any) => {
-        const cursor = event.target.result;
+      request.onsuccess = () => {
+        const cursor = request.result;
         if (cursor) {
           const key = cursor.primaryKey as string;
-          if (key.startsWith(`${tripId}/`)) {
+          // Custom media paths are stored as blob://db/{tripId}/..., so use
+          // the same prefix here when removing a complete trip.
+          if (key.startsWith(`blob://db/${tripId}/`)) {
             assetStore.delete(key);
           }
           cursor.continue();
@@ -123,13 +128,38 @@ export function deleteAsset(path: string): Promise<void> {
   });
 }
 
+export function deleteAssetsByPrefix(prefix: string): Promise<void> {
+  return initDB().then((db) => new Promise((resolve, reject) => {
+    const tx = db.transaction('assets', 'readwrite');
+    const store = tx.objectStore('assets');
+    const request = store.openKeyCursor();
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (!cursor) return;
+      const key = cursor.primaryKey;
+      if (typeof key === 'string' && key.startsWith(prefix)) store.delete(key);
+      cursor.continue();
+    };
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  }));
+}
+
 // Helper to convert Asset Path to Object URL
 const assetUrlCache = new Map<string, string>();
 
 export function getAssetUrl(path: string): Promise<string> {
-  // If it's already a standard HTTP/relative path, return it directly
+  // Public HEIC files also need conversion because browsers cannot render them natively.
   if (!path.startsWith('blob://db/')) {
-    return Promise.resolve(path);
+    if (!isHeifFile({ name: path, type: '' })) return Promise.resolve(path);
+    if (assetUrlCache.has(path)) return Promise.resolve(assetUrlCache.get(path)!);
+    return fetch(path).then(async (response) => {
+      if (!response.ok) return path;
+      const blob = await response.blob();
+      const url = await createPhotoPreviewUrl(blob, path);
+      assetUrlCache.set(path, url);
+      return url;
+    }).catch(() => path);
   }
   
   // Check memory cache
@@ -137,9 +167,9 @@ export function getAssetUrl(path: string): Promise<string> {
     return Promise.resolve(assetUrlCache.get(path)!);
   }
   
-  return getAsset(path).then((blob) => {
+  return getAsset(path).then(async (blob) => {
     if (!blob) return '';
-    const url = URL.createObjectURL(blob);
+    const url = await createPhotoPreviewUrl(blob, path);
     assetUrlCache.set(path, url);
     return url;
   });

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { X, Upload, Plus, Save, Loader2, MapPin, Database } from 'lucide-react';
+import { X, Upload, Save, Loader2, Database } from 'lucide-react';
 import { supabase } from '../utils/supabase';
 
 interface AdminPanelProps {
@@ -213,13 +213,13 @@ export default function AdminPanel({ onClose, onDataUpdated }: AdminPanelProps) 
               >
                 <Upload className="mx-auto text-gray-400 mb-2" />
                 <span className="text-sm text-gray-600">
-                  {photos.length > 0 ? \`已选择 \${photos.length} 张照片\` : '点击选择照片文件'}
+                  {photos.length > 0 ? `已选择 ${photos.length} 张照片` : '点击选择照片文件'}
                 </span>
               </div>
               <input 
                 type="file" 
                 multiple 
-                accept="image/*" 
+                accept="image/*,image/heic,image/heif,.heic,.heif" 
                 className="hidden" 
                 ref={fileInputRef}
                 onChange={handleFileChange}

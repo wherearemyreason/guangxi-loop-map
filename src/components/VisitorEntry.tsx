@@ -26,6 +26,8 @@ interface Particle {
 
 export default function VisitorEntry({ onComplete }: VisitorEntryProps) {
   const [name, setName] = useState('');
+  const nameRef = useRef(name);
+  nameRef.current = name;
   const [relationship, setRelationship] = useState<Relationship>('朋友');
   const [phase, setPhase] = useState<Phase>('input');
   
@@ -287,15 +289,28 @@ export default function VisitorEntry({ onComplete }: VisitorEntryProps) {
     offCanvas.width = canvas.width;
     offCanvas.height = canvas.height;
 
-    // Responsive sizing logic
+    // Dynamic sizing to occupy the middle of the screen
     const isMobile = canvas.width < 768;
-    const fontSize = isMobile ? Math.min(32, canvas.width / 10) : 48;
+    const text = `欢迎 ${nameRef.current || name}`;
+    
+    // We start with a large font size and measure it
+    let fontSize = isMobile ? 40 : 100;
+    offCtx.font = `bold ${fontSize}px var(--font-cn)`;
+    let textWidth = offCtx.measureText(text).width;
+    const targetWidth = canvas.width * (isMobile ? 0.85 : 0.75); // Target 75%-85% of screen width
+    
+    // Dynamically adjust font size to occupy target width
+    fontSize = (targetWidth / textWidth) * fontSize;
+    
+    // Clamp the font size between reasonable minimum and maximum limits
+    const maxFontSize = isMobile ? 54 : 130; // Epic large title sizing
+    const minFontSize = isMobile ? 24 : 48;
+    fontSize = Math.min(Math.max(fontSize, minFontSize), maxFontSize);
+    
     offCtx.font = `bold ${fontSize}px var(--font-cn)`;
     offCtx.fillStyle = '#ffffff';
     offCtx.textAlign = 'center';
     offCtx.textBaseline = 'middle';
-
-    const text = `欢迎 ${name}`;
     offCtx.fillText(text, canvas.width / 2, canvas.height / 2);
 
     // Read pixels

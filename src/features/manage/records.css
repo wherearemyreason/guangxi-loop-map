@@ -1,0 +1,35 @@
+.saved-trips {
+  margin-top: 30px;
+  border-top: 1px solid #e5e6df;
+  padding-top: 22px;
+}
+
+.saved-trips-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.saved-trips-heading h3 { font-size: 17px; margin: 0; color: #34483c; }
+.saved-trips-heading span { font-size: 12px; color: #89918d; }
+.saved-trips-empty { font-size: 13px; color: #89918d; background: #f6f6f1; border-radius: 10px; padding: 14px; }
+.saved-trips-list { display: grid; gap: 8px; }
+.composer-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.composer-actions .btn-cancel { min-height: 44px; }
+.saved-trip-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid #e1e5de; border-radius: 11px; padding: 12px 13px; background: #fff; }
+.saved-trip-row > div:first-child { min-width: 0; }
+.saved-trip-row strong, .saved-trip-row span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.saved-trip-row strong { font-size: 14px; color: #354a3d; }
+.saved-trip-row span { font-size: 12px; color: #89918d; margin-top: 4px; }
+.saved-trip-actions { display: flex; gap: 5px; flex: 0 0 auto; }
+.icon-action { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #d7dfd7; border-radius: 8px; background: #fff; color: #466252; cursor: pointer; }
+.icon-action:hover { background: #edf3ed; border-color: #aec1b1; }
+.icon-action.danger { color: #b45d50; }
+.icon-action.danger:hover { background: #fff0ed; border-color: #e1aaa1; }
+
+@media (max-width: 760px) {
+  .saved-trip-row { align-items: flex-start; }
+  .saved-trip-row span { white-space: normal; }
+}

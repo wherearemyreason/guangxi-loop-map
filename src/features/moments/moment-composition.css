@@ -1,0 +1,43 @@
+.moment-feedback-screenshot {
+  display: block;
+  width: min(100%, 435px);
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+  background: #f4f5f3;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.moment-feedback-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  object-fit: contain;
+}
+
+.detail-feedback-screenshot {
+  margin: 16px 0;
+  background: #f4f5f3;
+}
+
+.detail-feedback-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 1000px;
+  object-fit: contain;
+}
+
+.composer-hint {
+  margin: -10px 0 20px;
+  color: #6d7972;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.feedback-upload {
+  background: #f8f3ec;
+  border-color: #c9a58e;
+}
